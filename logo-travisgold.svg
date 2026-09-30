@@ -1,7 +1,0 @@
-<svg width="300" height="72" viewBox="0 0 300 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="4" width="64" height="64" rx="18" fill="#0B1F33"/>
-  <path d="M18 22H54V30H40V52H32V30H18V22Z" fill="#D6B36A"/>
-  <path d="M40 37H57L51 49H34L40 37Z" fill="#F3D58A"/>
-  <path d="M53 14L55 19L60 21L55 23L53 28L51 23L46 21L51 19L53 14Z" fill="#FFFDF7"/>
-  <text x="84" y="45" fill="#0B1F33" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">TravisGold</text>
-</svg>
