@@ -1,0 +1,21 @@
+TravisGold v1.0.6 - Gold Dashboard UI
+
+Cap nhat chinh:
+- src/pages/DashboardPage.tsx
+- src/components/StoreSelector.tsx
+- src/index.css
+
+Dong bo version/build:
+- package.json
+- vite.config.ts
+- tsconfig.node.json
+- .github/workflows/deploy.yml
+
+Bo cuc dashboard mobile:
+Hang 1: Giao dich | So luong ton
+Hang 2: SL mua vao | SL ban ra
+Hang 3: Tien mua vao | Tien ban ra
+Hang 4: Loi nhuan (full width)
+
+Commit goi y:
+v1.0.6 - Gold shop dashboard redesign
