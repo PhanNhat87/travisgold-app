@@ -1,0 +1,15 @@
+{
+  "name": "TravisGold",
+  "short_name": "TravisGold",
+  "description": "Ung dung noi bo quan ly mua vao, ban ra va doanh thu hai cua hang.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F7FA",
+  "theme_color": "#0B1F33",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

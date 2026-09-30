@@ -114,4 +114,10 @@ travisgold-app/
 
 ## Phiên bản
 
-`v1.0.0`
+`v1.0.1`
+
+### v1.0.1
+
+- Khôi phục đúng cấu trúc `src/`, `public/` và `.github/workflows/`.
+- Giữ đúng đường dẫn GitHub Pages `/travisgold-app/`.
+- Đồng bộ số phiên bản hiển thị trong ứng dụng thành `1.0.1`.
