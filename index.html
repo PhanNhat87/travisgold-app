@@ -1,19 +1,112 @@
 <!doctype html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0B1F33" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="TravisGold" />
-    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <title>TravisGold</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="vi" class="tnStartupPendingV41813">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#18324A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Travis Note">
+  <title>Travis Note</title>
+  <link rel="manifest" href="/manifest.webmanifest?v=4.19.11">
+  <link rel="icon" href="/icon.svg?v=4.19.11" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico?v=4.19.11" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-v330.png?v=4.19.11">
+  <!-- Core styles -->
+  <link rel="stylesheet" href="/styles.css?v=4.19.11">
+  <!-- Feature styles: keep this order because later files intentionally override earlier layers -->
+  <link rel="stylesheet" href="/schedule-v472.css?v=4.19.11">
+  <link rel="stylesheet" href="/schedule-v475.css?v=4.19.11">
+  <link rel="stylesheet" href="/schedule-v41214.css?v=4.19.11">
+  <link rel="stylesheet" href="/schedule-v477.css?v=4.19.11">
+  <link rel="stylesheet" href="/fix-v464.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v480.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v481.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v482.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v483.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v484.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v486.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v487.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v493.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v495.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v496.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v497.css?v=4.19.11">
+  <link rel="stylesheet" href="/notes-v498.css?v=4.19.11">
+  <link rel="stylesheet" href="/calendar-v4110.css?v=4.19.11">
+  <link rel="stylesheet" href="/calendar-v4112.css?v=4.19.11">
+  <link rel="stylesheet" href="/calendar-v4116.css?v=4.19.11">
+  <link rel="stylesheet" href="/contacts-v4119.css?v=4.19.11">
+  <link rel="stylesheet" href="/contact-activity-v41911.css?v=4.19.11">
+  <link rel="stylesheet" href="/contact-debt-hub-v4198.css?v=4.19.11">
+  <link rel="stylesheet" href="/calendar-v41212.css?v=4.19.11">
+  <link rel="stylesheet" href="/calendar-v4190.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4132.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4134.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4140.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4142.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4150.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4151.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4160.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4162.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4181.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4184.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4185.css?v=4.19.11">
+  <link rel="stylesheet" href="/ledger-v4186.css?v=4.19.11">
+  <link rel="stylesheet" href="/startup-v41813.css?v=4.19.11">
+  <link rel="stylesheet" href="/schedule-v4194.css?v=4.19.11">
+</head>
+<body>
+  <div id="boot" class="boot" aria-live="polite">
+    <div class="bootSkeleton" id="boot-skeleton">
+      <div class="skeleton skeletonTop"></div>
+      <div class="skeleton skeletonTabs"></div>
+      <div class="skeleton skeletonCalendar"></div>
+      <div class="skeleton skeletonLine short"></div>
+      <div class="skeleton skeletonLine"></div>
+      <div class="skeleton skeletonBlock"></div>
+    </div>
+  </div>
+  <div id="offline" class="offline hidden">Bạn đang offline. Dữ liệu sẽ được lưu trên thiết bị.</div>
+  <div id="app" class="app"></div>
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+  <script>
+    window.__bootGuard=setTimeout(function(){
+      var boot=document.getElementById('boot');
+      if(!boot||boot.classList.contains('hidden'))return;
+      boot.innerHTML='<div class="bootError"><div class="bootErrorTitle">Không thể tải dữ liệu</div><div class="bootErrorText">Ứng dụng mất nhiều thời gian hơn bình thường. Dữ liệu trên thiết bị vẫn được giữ nguyên.</div><button class="bootRetry" onclick="location.reload()">Thử lại</button></div>';
+    },8000);
+  </script>
+
+  <!-- Preload migration must run before app.js -->
+  <script src="/notes-v488-preload.js?v=4.19.11"></script>
+
+  <!-- Core app + stable feature layers. Keep deferred script order unchanged. -->
+  <script src="/app.js?v=4.19.11" defer></script>
+  <script src="/fix-v464.js?v=4.19.11" defer></script>
+  <script src="/travisbox-v4196.js?v=4.19.11" defer></script>
+  <script src="/debt-v4103.js?v=4.19.11" defer></script>
+  <script src="/calendar-v4111.js?v=4.19.11" defer></script>
+  <script src="/calendar-v4112.js?v=4.19.11" defer></script>
+  <script src="/calendar-v4116.js?v=4.19.11" defer></script>
+  <script src="/contacts-v4119.js?v=4.19.11" defer></script>
+  <script src="/contact-activity-v41911.js?v=4.19.11" defer></script>
+  <script src="/contact-debt-hub-v4198.js?v=4.19.11" defer></script>
+  <script src="/calendar-v41212.js?v=4.19.11" defer></script>
+  <script src="/calendar-share-v41814.js?v=4.19.11" defer></script>
+  <script src="/calendar-v4190.js?v=4.19.11" defer></script>
+  <script src="/notes-v480.js?v=4.19.11" defer></script>
+  <script src="/notes-v493.js?v=4.19.11" defer></script>
+  <script src="/notes-v495.js?v=4.19.11" defer></script>
+  <script src="/ledger-v4132.js?v=4.19.11" defer></script>
+  <script src="/ledger-v4142.js?v=4.19.11" defer></script>
+  <script src="/ledger-v4160.js?v=4.19.11" defer></script>
+  <script src="/ledger-v4161.js?v=4.19.11" defer></script>
+  <!-- v4.19.11 removes the old activity filter chips and keeps one compact debt row with contextual All/Complete action. -->
+  <script src="/ledger-v4184.js?v=4.19.11" defer></script>
+  <script src="/ledger-v41811.js?v=4.19.11" defer></script>
+  <script src="/ledger-v41812.js?v=4.19.11" defer></script>
+  <script src="/startup-v41813.js?v=4.19.11" defer></script>
+  <script src="/schedule-v4194.js?v=4.19.11" defer></script>
+</body>
 </html>

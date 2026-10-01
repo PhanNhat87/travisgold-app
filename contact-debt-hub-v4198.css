@@ -1,0 +1,474 @@
+/* TravisNote v4.19.8 - Compact Customer Activity + Debt Hub */
+
+/* Xoa vung do: 2 nut + Them lich hen / + Them ghi chu */
+#app[data-route="contact"] .profileHeroActions.tn4198HiddenHeroActions{
+  display:none !important;
+}
+
+/* Xoa vung vang: 3 nut + Lich / + Ghi chu / + Cong no */
+#app[data-route="contact"] .tn4197QuickRow.tn4198HiddenQuickRow{
+  display:none !important;
+}
+
+/* Empty state cung khong lap lai 3 nut action. */
+#app[data-route="contact"] .tn4197EmptyActions.tn4198HiddenEmptyActions{
+  display:none !important;
+}
+
+#app[data-route="contact"] .tn4197ActivitySection{
+  margin-top:17px;
+}
+
+#app[data-route="contact"] .tn4197ActivityHead{
+  margin-bottom:10px;
+}
+
+#app[data-route="contact"] .tn4198DebtHubButton{
+  appearance:none;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:0;
+  border-radius:14px;
+  padding:0 15px;
+  background:#173B5C;
+  color:#FFFFFF;
+  font:inherit;
+  font-size:12.5px;
+  font-weight:850;
+  box-shadow:0 7px 16px rgba(23,59,92,.15);
+  -webkit-tap-highlight-color:transparent;
+}
+
+#app[data-route="contact"] .tn4198DebtHubButton>span{
+  width:22px;
+  height:22px;
+  display:grid;
+  place-items:center;
+}
+
+#app[data-route="contact"] .tn4198DebtHubButton svg{
+  width:19px;
+  height:19px;
+}
+
+#app[data-route="contact"] .tn4198DebtHubButton i{
+  min-width:19px;
+  height:19px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  padding:0 5px;
+  background:rgba(255,255,255,.17);
+  color:#FFFFFF;
+  font-size:9.5px;
+  font-style:normal;
+  font-weight:850;
+}
+
+#app[data-route="contact"] .tn4198DebtHubButton:active{
+  transform:scale(.97);
+}
+
+/* Debt Hub */
+body.tn4198DebtHubOpen{
+  overflow:hidden;
+}
+
+#tn4198-debt-hub-root{
+  position:relative;
+  z-index:9999;
+}
+
+.tn4198DebtHubLayer{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.tn4198DebtHubBackdrop{
+  position:absolute;
+  inset:0;
+  border:0;
+  background:rgba(18,28,37,.28);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+}
+
+.tn4198DebtHubSheet{
+  position:relative;
+  z-index:1;
+  width:min(100%,520px);
+  max-height:min(82vh,720px);
+  overflow:auto;
+  border:1px solid #E3DCD3;
+  border-radius:24px 24px 0 0;
+  padding:9px 16px calc(18px + env(safe-area-inset-bottom));
+  background:#FFFDF9;
+  box-shadow:0 -20px 55px rgba(20,36,51,.16);
+}
+
+.tn4198DebtHubHandle{
+  width:42px;
+  height:5px;
+  margin:2px auto 13px;
+  border-radius:999px;
+  background:#D8D1CA;
+}
+
+.tn4198DebtHubHeader{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.tn4198DebtHubHeader span{
+  display:block;
+  margin-bottom:3px;
+  color:#598A80;
+  font-size:10px;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:.09em;
+}
+
+.tn4198DebtHubHeader h3{
+  margin:0;
+  color:#17263A;
+  font-size:20px;
+  line-height:1.15;
+  font-weight:920;
+  letter-spacing:-.03em;
+}
+
+.tn4198DebtHubClose{
+  appearance:none;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border:1px solid #E3DCD3;
+  border-radius:13px;
+  background:#FFFFFF;
+  color:#536273;
+}
+
+.tn4198DebtHubClose svg{
+  width:18px;
+  height:18px;
+}
+
+.tn4198DebtHubSummary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-top:15px;
+  border:1px solid #E5DED5;
+  border-radius:17px;
+  padding:13px 14px;
+  background:#FAF7F2;
+}
+
+.tn4198DebtHubSummary>div{
+  min-width:0;
+}
+
+.tn4198DebtHubSummary span,
+.tn4198DebtHubSummary small{
+  display:block;
+  color:#78818D;
+  font-size:10.8px;
+  line-height:1.35;
+  font-weight:620;
+}
+
+.tn4198DebtHubSummary strong{
+  display:block;
+  margin:3px 0;
+  color:#203046;
+  font-size:16px;
+  line-height:1.2;
+  font-weight:900;
+}
+
+.tn4198DebtHubSummary strong.recv{
+  color:#28835D;
+}
+
+.tn4198DebtHubSummary strong.pay{
+  color:#C65D58;
+}
+
+.tn4198DebtHubSummary em{
+  flex:0 0 auto;
+  min-width:53px;
+  min-height:31px;
+  display:grid;
+  place-items:center;
+  border-radius:999px;
+  background:#EAF1F6;
+  color:#173B5C;
+  font-size:10.5px;
+  font-style:normal;
+  font-weight:820;
+}
+
+.tn4198DebtHubActions{
+  display:grid;
+  grid-template-columns:1fr 1.25fr;
+  gap:9px;
+  margin-top:11px;
+}
+
+.tn4198DebtAction{
+  appearance:none;
+  min-width:0;
+  min-height:67px;
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr);
+  gap:8px;
+  align-items:center;
+  border:1px solid #E4DDD4;
+  border-radius:16px;
+  padding:10px;
+  text-align:left;
+  font:inherit;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.tn4198DebtAction>span{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+}
+
+.tn4198DebtAction svg{
+  width:19px;
+  height:19px;
+}
+
+.tn4198DebtAction div{
+  min-width:0;
+}
+
+.tn4198DebtAction b,
+.tn4198DebtAction small{
+  display:block;
+}
+
+.tn4198DebtAction b{
+  color:#213147;
+  font-size:11.7px;
+  line-height:1.25;
+  font-weight:850;
+}
+
+.tn4198DebtAction small{
+  margin-top:2px;
+  color:#7A838D;
+  font-size:9.7px;
+  line-height:1.3;
+  font-weight:560;
+}
+
+.tn4198DebtAction.add{
+  background:#F7FAFC;
+}
+
+.tn4198DebtAction.add>span{
+  background:#E8F1F8;
+  color:#2775AF;
+}
+
+.tn4198DebtAction.share{
+  background:#F3F7FA;
+}
+
+.tn4198DebtAction.share>span{
+  background:#E5EEF5;
+  color:#173B5C;
+}
+
+.tn4198DebtAction:active:not(:disabled){
+  transform:scale(.985);
+}
+
+.tn4198DebtAction:disabled{
+  opacity:.48;
+}
+
+.tn4198QrCard{
+  appearance:none;
+  width:100%;
+  min-height:75px;
+  display:grid;
+  grid-template-columns:52px minmax(0,1fr) auto;
+  gap:10px;
+  align-items:center;
+  margin-top:10px;
+  border:1px solid #E4DDD4;
+  border-radius:17px;
+  padding:10px 11px;
+  background:#FFF9EF;
+  text-align:left;
+  font:inherit;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.tn4198QrIcon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-radius:13px;
+  background:#FFF1D6;
+  color:#B8741F;
+}
+
+.tn4198QrIcon svg{
+  width:25px;
+  height:25px;
+}
+
+.tn4198QrIcon img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background:#FFFFFF;
+}
+
+.tn4198QrText{
+  min-width:0;
+}
+
+.tn4198QrText b,
+.tn4198QrText small{
+  display:block;
+}
+
+.tn4198QrText b{
+  color:#243349;
+  font-size:12px;
+  line-height:1.25;
+  font-weight:860;
+}
+
+.tn4198QrText small{
+  margin-top:3px;
+  color:#7D838A;
+  font-size:9.8px;
+  line-height:1.35;
+  font-weight:560;
+}
+
+.tn4198QrCard>strong{
+  color:#B6741E;
+  font-size:10px;
+  line-height:1;
+  font-weight:830;
+}
+
+.tn4198QrCard.ready{
+  background:#F3FAF7;
+}
+
+.tn4198QrCard.ready .tn4198QrIcon{
+  background:#FFFFFF;
+  box-shadow:0 0 0 1px #D9E7DF;
+}
+
+.tn4198QrCard.ready>strong{
+  color:#23845D;
+}
+
+.tn4198QrCard:disabled{
+  opacity:.5;
+}
+
+.tn4198DebtHubHint{
+  margin:10px 4px 0;
+  color:#81868C;
+  font-size:9.8px;
+  line-height:1.45;
+  font-weight:540;
+}
+
+/* Dark mode */
+body.dark .tn4198DebtHubSheet{
+  border-color:var(--border);
+  background:var(--surface);
+}
+
+body.dark .tn4198DebtHubHeader h3,
+body.dark .tn4198DebtAction b,
+body.dark .tn4198QrText b,
+body.dark .tn4198DebtHubSummary strong{
+  color:var(--text);
+}
+
+body.dark .tn4198DebtHubSummary,
+body.dark .tn4198DebtAction,
+body.dark .tn4198QrCard{
+  border-color:var(--border);
+  background:var(--surface-2);
+}
+
+@media(max-width:430px){
+  #app[data-route="contact"] .tn4198DebtHubButton{
+    min-height:39px;
+    padding:0 13px;
+    border-radius:13px;
+    font-size:12px;
+  }
+
+  .tn4198DebtHubSheet{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .tn4198DebtHubActions{
+    grid-template-columns:1fr 1.2fr;
+    gap:8px;
+  }
+
+  .tn4198DebtAction{
+    min-height:64px;
+    grid-template-columns:31px minmax(0,1fr);
+    gap:7px;
+    padding:9px;
+  }
+
+  .tn4198DebtAction>span{
+    width:31px;
+    height:31px;
+  }
+
+  .tn4198QrCard{
+    grid-template-columns:48px minmax(0,1fr) auto;
+  }
+
+  .tn4198QrIcon{
+    width:48px;
+    height:48px;
+  }
+}
+
+@media(max-width:360px){
+  .tn4198DebtHubActions{
+    grid-template-columns:1fr;
+  }
+
+  .tn4198DebtAction{
+    grid-template-columns:34px minmax(0,1fr);
+  }
+}
